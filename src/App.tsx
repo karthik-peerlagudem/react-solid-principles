@@ -1,4 +1,5 @@
 import './App.css';
+import { Search } from './principles/LSP/bad/Search';
 // import { GoodIndex } from './principles/OCP/GoodIndex';
 // import { BadIndex } from './principles/OCP/BadIndex';
 // import { ProductList } from './principles/SRP/ProductList';
@@ -14,6 +15,7 @@ function App() {
             {/* OCP */}
             {/* <BadIndex /> */}
             {/* <GoodIndex /> */}
+            <Search />
         </div>
     );
 }
