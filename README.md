@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# React SOLID Principles Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A demonstration project showcasing **SOLID principles** implementation in **React** with **TypeScript**. This project provides practical examples of how to apply **SOLID principles** in modern React applications.
 
-Currently, two official plugins are available:
+## Technologies Used
+- **React 18**
+- **TypeScript**
+- **Vite**
+- **Jest + React Testing Library**
+- **Tailwind CSS**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## SOLID Principles Implementation
 
-## Expanding the ESLint configuration
+### 1. Single Responsibility Principle (SRP)
+📂 **Located in** `SRP`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Demonstrates **component separation of concerns**
+- Examples include `ProductList` and `Filter` components
 
-- Configure the top-level `parserOptions` property like this:
+### 2. Open/Closed Principle (OCP)
+📂 **Located in** `OCP`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Examples:
+  - `BadButton.tsx`
+  - `GoodButton.tsx`
+
+### 3. Liskov Substitution Principle (LSP)
+📂 **Located in** `LSP`
+
+- Shows correct and incorrect implementations of `SearchInput` components
+- Includes practical examples of **component substitution**
+
+### 4. Interface Segregation Principle (ISP)
+📂 **Located in** `ISP`
+
+- Demonstrates **proper component interface design**
+- Examples of both **good and bad implementations**
+
+### 5. Dependency Inversion Principle (DIP)
+📂 **Located in** `DIP`
+
+- **Authentication component examples**
+- Shows **proper dependency management**
+
+## Testing
+✅ **Tests are written using Jest and React Testing Library**. Key test files:
+
+- `ProductItem.test.tsx`
+- `SearchInput.test.tsx`
+- `DIPIndex.test.tsx`
+
+## Getting Started
+
+### 📂 Project Structure
+```
+📦 react-solid-demo
+├── src
+│   ├── components
+│   │   ├── SRP
+│   │   ├── OCP
+│   │   ├── LSP
+│   │   ├── ISP
+│   │   ├── DIP
+│   ├── tests
+│   │   ├── ProductItem.test.tsx
+│   │   ├── SearchInput.test.tsx
+│   │   ├── DIPIndex.test.tsx
+│   ├── styles
+│   ├── App.tsx
+│   ├── main.tsx
+├── package.json
+├── README.md
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## License
+This project is licensed under the **MIT License**.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
